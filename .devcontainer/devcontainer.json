@@ -18,7 +18,8 @@
         "EditorConfig.EditorConfig",
         "formulahendry.code-runner",
         "ms-toolsai.jupyter",
-        "-denoland.vscode-deno"
+        "-denoland.vscode-deno",
+        "genaiscript.genaiscript-vscode"
       ]
     }
   },
