@@ -29,12 +29,11 @@
     "url": "https://github.com/sinedied/github-models-javascript-playground/issues"
   },
   "license": "MIT",
-  "dependencies": {
-    "openai": "^4.52.7",
-    "vectra": "^0.7.6"
-  },
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "genaiscript": "^1.79.0"
   }
 }

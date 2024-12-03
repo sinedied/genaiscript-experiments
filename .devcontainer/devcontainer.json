@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-  "name": "javascript",
+  "name": "genaiscript",
 
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20-bullseye",
@@ -16,15 +16,13 @@
     "vscode": {
       "extensions": [
         "EditorConfig.EditorConfig",
-        "formulahendry.code-runner",
         "ms-toolsai.jupyter",
-        "-denoland.vscode-deno",
         "genaiscript.genaiscript-vscode"
       ]
     }
   },
 
-  "postCreateCommand": "npm install -g tsx; deno jupyter --install; npm install",
+  "postCreateCommand": "npm install",
 
   // Set minimal host requirements for the container.
   "hostRequirements": {
