@@ -21,7 +21,7 @@ jobs:
     - name: start ollama
       run: docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
     - name: genaiscript issue-review
-      run: npx -y genaiscript run validate-issue -prc --out-trace $GITHUB_STEP_SUMMARY --model ollama:llama3.2:1b
+      run: npx -y genaiscript run validate-issue -prc --out-trace $GITHUB_STEP_SUMMARY --model ollama:llama3.2:3b
       env:
         GITHUB_ISSUE: ${{ github.event.issue.number }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
