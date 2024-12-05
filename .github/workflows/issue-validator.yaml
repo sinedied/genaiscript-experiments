@@ -5,6 +5,10 @@ on:
 concurrency:
   group: issues-${{ github.event.issue.number }}
   cancel-in-progress: true
+env:
+    GENAISCRIPT_DEFAULT_MODEL: ollama:llama3.2:3b
+    GENAISCRIPT_DEFAULT_SMALL_MODEL: ollama:llama3.2:1b
+    GENAISCRIPT_DEFAULT_VISION_MODEL: ollama:llama3.2-vision:11b
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,9 +23,9 @@ jobs:
         cache: npm
     - run: npm ci
     - name: start ollama
-      run: docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+      run: docker run -d -v ollama:/root/.ollama -p 11434:11434 -e OLLAMA_FLASH_ATTENTION=1 -e OLLAMA_KV_CACHE_TYPE=q8_0 --name ollama ollama/ollama
     - name: genaiscript issue-review
-      run: npx -y genaiscript run validate-issue -prc --out-trace $GITHUB_STEP_SUMMARY --model ollama:llama3.2:3b
+      run: npx -y genaiscript run validate-issue -prc --out-trace $GITHUB_STEP_SUMMARY
       env:
         GITHUB_ISSUE: ${{ github.event.issue.number }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
