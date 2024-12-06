@@ -6,9 +6,9 @@ concurrency:
   group: issues-${{ github.event.issue.number }}
   cancel-in-progress: true
 env:
-    GENAISCRIPT_DEFAULT_MODEL: ollama:llama3.2:3b
-    GENAISCRIPT_DEFAULT_SMALL_MODEL: ollama:llama3.2:1b
-    GENAISCRIPT_DEFAULT_VISION_MODEL: ollama:llama3.2-vision:11b
+  GENAISCRIPT_DEFAULT_MODEL: ollama:llama3.2:3b
+  GENAISCRIPT_DEFAULT_SMALL_MODEL: ollama:llama3.2:1b
+  GENAISCRIPT_DEFAULT_VISION_MODEL: ollama:llama3.2-vision:11b
 jobs:
   build:
     runs-on: ubuntu-latest
