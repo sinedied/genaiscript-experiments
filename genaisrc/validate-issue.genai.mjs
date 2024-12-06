@@ -25,6 +25,13 @@ $`You are an expert code challenge reviewer and have been asked to review an iss
 Review the TITLE and BODY and report your feedback that will be added as a comment to the issue.
 If you find links to images, check that the image content match the expected result.
 
+## Validation rules
+
+- Fork URL must be a fork of https://github.com/microsoft/JavaScript-AI-Azure-Adventures/
+- Screenshot must show a web browser running on http://localhost:4043
+
+## Feedback
+
 Your feedback must be one of these:
 - ✅ Issue valid
 - 🛑 Validation failed: <reason>
