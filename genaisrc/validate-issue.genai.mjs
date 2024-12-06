@@ -14,12 +14,12 @@ const { title, body } = issue;
 
 def("TITLE", title);
 def("BODY", body);
-defTool(
-  "fetch",
-  "Download text from a URL",
-  { url: "https://..." },
-  ({ url }) => host.fetch(url)
-)
+// defTool(
+//   "fetch",
+//   "Download text from a URL",
+//   { url: "https://..." },
+//   ({ url }) => host.fetch(url)
+// )
 
 $`You are an expert code challenge reviewer and have been asked to review an issue where people shows their proof of achievement.
 Review the TITLE and BODY and report your feedback that will be added as a comment to the issue.
