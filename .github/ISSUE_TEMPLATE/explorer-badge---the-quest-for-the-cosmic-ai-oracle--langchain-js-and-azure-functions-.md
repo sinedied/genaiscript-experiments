@@ -9,6 +9,8 @@ assignees: ''
 
 ---
 
+<!-- DO NOT REMOVE THIS! badge:langchainjs/explorer -->
+
 # Explorer Badge - The Quest for the Cosmic AI Oracle: LangChain.js and Azure Functions
 
 Welcome! To earn the Explorer Badge for this adventure, please supply the URL to your forked repository as well as a screenshot of the app running locally on your machine.
