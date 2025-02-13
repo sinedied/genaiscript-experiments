@@ -36,6 +36,8 @@ Your feedback must be one of these:
 - ✅ Issue valid
 - 🛑 Validation failed: <reason>
 - ⚠️ Need more details: <explain>
+
+Then add this on a newline after your feedback: "Please edit your issue to fix the problems mentioned above."
 `.role("system");
 
 // TODO: create tool to send in the badge
