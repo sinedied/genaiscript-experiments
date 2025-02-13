@@ -23,6 +23,8 @@ ${body}`,
   },
 );
 
+console.log("Images: ", images);
+
 def("BODY", body);
 defImages("IMAGES", images);
 
