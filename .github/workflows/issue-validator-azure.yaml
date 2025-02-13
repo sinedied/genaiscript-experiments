@@ -22,8 +22,10 @@ jobs:
         node-version: 20
         cache: npm
     - run: npm ci
-    - name: genaiscript issue-review
-      run: npx -y genaiscript run validate-issue -prc --out-trace $GITHUB_STEP_SUMMARY
+    - name: review issue
+      run: |
+        badge=$(.github/get-badge.mjs "${{ github.event.issue.body }}")
+        npx -y genaiscript run "$badge.genai.mjs" -prc --out-trace $GITHUB_STEP_SUMMARY
       env:
         GITHUB_ISSUE: ${{ github.event.issue.number }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
