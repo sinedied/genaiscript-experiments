@@ -26,7 +26,7 @@ ${body}`,
 console.log("Images: ", images);
 
 def("BODY", body);
-defImages("IMAGES", images);
+defImages("IMAGES", images, { ignoreEmpty: true });
 
 $`You are an expert code challenge reviewer and have been asked to review an issue where people shows their proof of achievement.
 Review the issue BODY and report your feedback that will be added as a comment to the issue.

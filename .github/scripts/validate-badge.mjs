@@ -10,7 +10,7 @@ if (!issueContent) {
 }
 
 const badgeRegex = /<!--(?:.*?)badge:(.*?) -->/;
-const [_, badgeName] = issueContent.match(badgeRegex);
+const [_, badgeName] = issueContent.match(badgeRegex) ?? [];
 
 if (!badgeName) {
   console.error('No badge name found in issue.');
