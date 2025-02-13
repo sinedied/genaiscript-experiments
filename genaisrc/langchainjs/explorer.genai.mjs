@@ -9,7 +9,7 @@ const issue = await github.getIssue(parseInt(GITHUB_ISSUE));
 if (!issue) {
   throw new Error(`Issue "${GITHUB_ISSUE}" not found`);
 }
-const { body } = issue;
+const { body, user } = issue;
 
 // Extract images URLs from issue content
 const { json: images } = await runPrompt(
@@ -24,6 +24,7 @@ ${body}`,
 );
 
 def("BODY", body);
+def("USER", user);
 defImages(images.links, { ignoreEmpty: true });
 
 $`You are an expert code challenge reviewer and have been asked to review an issue where people shows their proof of achievement.
@@ -32,7 +33,7 @@ When required check that images content match the expected result.
 
 ## Validation rules
 
-- Fork URL must be a fork of https://github.com/Azure-Samples/github-models-javascript-playground
+- Fork URL must be like this: https://github.com/USER/genaiscript-experiments/
 - Screenshot must show a web browser running on http://localhost:8000
 
 ## Feedback
