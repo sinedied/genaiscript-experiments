@@ -18,4 +18,7 @@ if (!badgeName) {
 }
 
 console.log(`Validating badge ${badgeName}`);
-execSync(`npx -y genaiscript run ${badgeName}.genai.mjs -prc --out-trace ${process.env.GITHUB_STEP_SUMMARY}`, { stdio: 'inherit' });
+execSync(
+  `npx -y genaiscript run "genaisrc/${badgeName}.genai.mjs" -prc --out-trace "${process.env.GITHUB_STEP_SUMMARY}"`,
+  { stdio: 'inherit' }
+);

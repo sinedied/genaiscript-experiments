@@ -7,7 +7,7 @@ script({
 const { GITHUB_ISSUE } = process.env;
 const issue = await github.getIssue(parseInt(GITHUB_ISSUE));
 if (!issue) {
-  throw new Error(`Issue ${GITHUB_ISSUE} not found`);
+  throw new Error(`Issue "${GITHUB_ISSUE}" not found`);
 }
 const { body } = issue;
 
