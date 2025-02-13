@@ -8,7 +8,6 @@
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers-community/features/deno:1": {}
   },
 
   // Configure tool-specific properties.
@@ -16,7 +15,6 @@
     "vscode": {
       "extensions": [
         "EditorConfig.EditorConfig",
-        "ms-toolsai.jupyter",
         "genaiscript.genaiscript-vscode"
       ]
     }

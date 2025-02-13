@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import process from 'node:process';
+import { run } from 'genaiscript/api';
 
 const issueContent = process.argv[2];
 
@@ -17,4 +18,5 @@ if (!badgeName) {
 }
 
 console.log(`Validating badge ${badgeName}`);
-
+const results = await run(`${badgeName}.genai.mjs`, ['-prc', '--out-trace', process.env.GITHUB_STEP_SUMMARY]);
+console.log(results);
