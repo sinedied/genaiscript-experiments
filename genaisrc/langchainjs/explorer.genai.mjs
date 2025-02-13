@@ -9,7 +9,7 @@ const issue = await github.getIssue(parseInt(GITHUB_ISSUE));
 if (!issue) {
   throw new Error(`Issue "${GITHUB_ISSUE}" not found`);
 }
-const { body, user } = issue;
+const { body, user, sender } = issue;
 
 // Extract images URLs from issue content
 const { json: images } = await runPrompt(
@@ -25,6 +25,10 @@ ${body}`,
 
 def("BODY", body);
 def("USER", user);
+
+console.log(`User: ${user?.login}`);
+console.log(`Sender: ${sender?.login}`);
+
 defImages(images.links, { ignoreEmpty: true });
 
 $`You are an expert code challenge reviewer and have been asked to review an issue where people shows their proof of achievement.
@@ -43,7 +47,7 @@ Your feedback must be one of these:
 - 🛑 Validation failed: <reason>
 - ⚠️ Need more details: <explain>
 
-Then add this on a newline after your feedback: "Please edit your issue to fix the problems mentioned above."
+If issue is not valid or incomplete, add this on a newline after your feedback: "Please edit your issue to fix the problems mentioned above."
 `.role("system");
 
 // TODO: action depending on the feedback: set label, call API to issue badge...
