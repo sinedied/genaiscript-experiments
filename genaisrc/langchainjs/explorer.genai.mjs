@@ -28,7 +28,7 @@ When required check that images content match the expected result.
 ## Validation rules
 
 - Fork URL must be a fork of https://github.com/microsoft/JavaScript-AI-Azure-Adventures/
-- Screenshot must show a web browser running on http://localhost:4043
+- Screenshot must show a web browser running on http://localhost:8000
 
 ## Feedback
 
