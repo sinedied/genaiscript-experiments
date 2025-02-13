@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import process from 'node:process';
-import { run } from 'genaiscript/api';
+import { execSync } from 'node:child_process';
 
 const issueContent = process.argv[2];
 
@@ -18,5 +18,4 @@ if (!badgeName) {
 }
 
 console.log(`Validating badge ${badgeName}`);
-const results = await run(`${badgeName}.genai.mjs`, ['-prc', '--out-trace', process.env.GITHUB_STEP_SUMMARY]);
-console.log(results);
+execSync(`npx -y genaiscript run ${badgeName}.genai.mjs -prc --out-trace ${process.env.GITHUB_STEP_SUMMARY}`, { stdio: 'inherit' });
