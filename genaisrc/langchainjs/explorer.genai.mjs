@@ -14,7 +14,7 @@ const { body } = issue;
 // Extract images URLs from issue content
 const { json: images } = await runPrompt(
   `Extract all images links as an array of HTTP links in the content below.
-example output: ["https://y.com/link1", "https://z.com/link2
+Example output: { "links": ["https://y.com/link1", "https://z.com/link2] }
 
 ${body}`,
   {
@@ -26,7 +26,7 @@ ${body}`,
 console.log("Images: ", images);
 
 def("BODY", body);
-defImages("IMAGES", images, { ignoreEmpty: true });
+defImages("IMAGES", images.links, { ignoreEmpty: true });
 
 $`You are an expert code challenge reviewer and have been asked to review an issue where people shows their proof of achievement.
 Review the issue BODY and report your feedback that will be added as a comment to the issue.
