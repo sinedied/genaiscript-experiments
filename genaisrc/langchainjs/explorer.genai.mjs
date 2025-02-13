@@ -33,7 +33,7 @@ When required check that images content match the expected result.
 
 ## Validation rules
 
-- Fork URL must be like this: https://github.com/USER/genaiscript-experiments/
+- Fork URL must be like this: https://github.com/<USER login>/genaiscript-experiments/
 - Screenshot must show a web browser running on http://localhost:8000
 
 ## Feedback
