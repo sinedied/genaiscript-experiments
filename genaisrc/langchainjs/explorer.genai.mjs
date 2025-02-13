@@ -32,7 +32,7 @@ When required check that images content match the expected result.
 
 ## Validation rules
 
-- Fork URL must be a fork of https://github.com/microsoft/genaiscript-experiments/
+- Fork URL must be a fork of https://github.com/Azure-Samples/github-models-javascript-playground
 - Screenshot must show a web browser running on http://localhost:8000
 
 ## Feedback
@@ -45,4 +45,4 @@ Your feedback must be one of these:
 Then add this on a newline after your feedback: "Please edit your issue to fix the problems mentioned above."
 `.role("system");
 
-// TODO: create tool to send in the badge
+// TODO: action depending on the feedback: set label, call API to issue badge...
