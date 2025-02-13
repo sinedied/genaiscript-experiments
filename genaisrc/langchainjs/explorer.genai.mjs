@@ -1,7 +1,7 @@
 script({
   title: "langchainjs/explorer badge validator",
   temperature: 0,
-  system: []
+  system: [],
 });
 
 const { GITHUB_ISSUE } = process.env;
@@ -13,8 +13,14 @@ const { body } = issue;
 
 // Extract images URLs from issue content
 const { json: images } = await runPrompt(
-  `Extract all images links as an array of HTTP links in the content below: ${body}`,
-  { temperature: 0, responseType: "json" }
+  `Extract all images links as an array of HTTP links in the content below.
+example output: ["https://y.com/link1", "https://z.com/link2
+
+${body}`,
+  {
+    temperature: 0,
+    responseType: "json_object",
+  },
 );
 
 def("TITLE", title);
@@ -41,4 +47,3 @@ Then add this on a newline after your feedback: "Please edit your issue to fix t
 `.role("system");
 
 // TODO: create tool to send in the badge
-
