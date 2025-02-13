@@ -23,7 +23,6 @@ ${body}`,
   },
 );
 
-def("TITLE", title);
 def("BODY", body);
 defImages("IMAGES", images);
 
